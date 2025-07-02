@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crudzocial</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbar" style="display: none;">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-share"></i> Crudzocial</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#" data-page="images"><i class="bi bi-images"></i> Imágenes</a>
+                <a class="nav-link" href="#" data-page="notes"><i class="bi bi-journal-text"></i> Notas</a>
+                <a class="nav-link" href="#" data-page="profile"><i class="bi bi-person"></i> Perfil</a>
+                <a class="nav-link" href="#" data-page="users" id="adminPanel" style="display: none;"><i class="bi bi-gear"></i> Admin</a>
+                <a class="nav-link" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Salir</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mt-4">
+        <!-- Login Page -->
+        <div id="loginPage" class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3><i class="bi bi-share"></i> Crudzocial</h3>
+                        <p class="mb-0">Iniciar Sesión</p>
+                    </div>
+                    <div class="card-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <small class="text-muted">¿No tienes cuenta? <a href="#" id="showRegister">Regístrate aquí</a></small>
+                        </div>
+                        <div id="loginError" class="alert alert-danger mt-3" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Form -->
+        <div id="registerPage" class="row justify-content-center" style="display: none;">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white text-center">
+                        <h3>Registro de Usuario</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="registerForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="regName" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="regName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="regLastName" class="form-label">Apellido</label>
+                                    <input type="text" class="form-control" id="regLastName" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="regEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="regEmail" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="regPassword" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="regPassword" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="regPhone" class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" id="regPhone">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="regCountry" class="form-label">País</label>
+                                    <input type="text" class="form-control" id="regCountry">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="regCity" class="form-label">Ciudad</label>
+                                    <input type="text" class="form-control" id="regCity">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="regPostalCode" class="form-label">Código Postal</label>
+                                    <input type="text" class="form-control" id="regPostalCode">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="regAddress" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="regAddress">
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success">Registrarse</button>
+                                <button type="button" class="btn btn-secondary" id="backToLogin">Volver al Login</button>
+                            </div>
+                        </form>
+                        <div id="registerError" class="alert alert-danger mt-3" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profilePage" style="display: none;">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="bi bi-person"></i> Mi Perfil</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="profileForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="profileName" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="profileName">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="profileLastName" class="form-label">Apellido</label>
+                                        <input type="text" class="form-control" id="profileLastName">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="profileEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="profileEmail" readonly>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="profilePhone" class="form-label">Teléfono</label>
+                                        <input type="tel" class="form-control" id="profilePhone">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="profileCountry" class="form-label">País</label>
+                                        <input type="text" class="form-control" id="profileCountry">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="profileCity" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control" id="profileCity">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 mb-3">
+                                        <label for="profileAddress" class="form-label">Dirección</label>
+                                        <input type="text" class="form-control" id="profileAddress">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="profilePostalCode" class="form-label">Código Postal</label>
+                                        <input type="text" class="form-control" id="profilePostalCode">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-success">Actualizar Perfil</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="bi bi-activity"></i> Mis Actividades</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="userLogs" style="max-height: 400px; overflow-y: auto;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
