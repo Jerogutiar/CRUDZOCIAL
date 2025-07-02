@@ -1,0 +1,6 @@
+:root {
+    --bs-body-font-family: "Open Sans", sans-serif;
+  }
+body{
+    font-family: var(--bs-body-font-family);
+}
