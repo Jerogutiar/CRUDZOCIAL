@@ -1,0 +1,156 @@
+/*Body Style*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: system-ui, sans-serif;
+    background: linear-gradient(135deg, #0a2342, #185adb, #2d62ea, #8ecae6);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    color: white;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/*Title*/
+.title{
+  text-align: center;
+}
+
+/*Nav Bar Style*/
+
+.nav_container {
+  background-color: #0b1f36;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.navBar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1.5rem 0;
+  margin: 0;
+  background-color: #ffffff;
+  border-bottom: 4px solid #0b1f36;
+}
+
+.navBar li a {
+  text-decoration: none;
+  color: #0b1f36;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', sans-serif;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.navBar li a:hover {
+  background-color: #0b1f36;
+  color: white;
+}
+
+/*Message*/
+
+.message{
+    text-align: center;
+    margin: 2rem;
+}
+
+/*Main info*/
+
+.page_container{
+    background-color: #ffffff;
+    color: black;
+    margin: 3rem;
+    border-radius: 25px;
+}
+
+.page_grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+}
+
+.image_info{
+    max-width: 300px;
+    border-radius: 25px;
+    margin: 2rem;
+    transition: 0.7s;
+}
+
+.image_info:hover{
+    transform: translateY(-25px)
+}
+
+.first_container,
+.second_container,
+.third_container {
+    grid-column: 2;
+    margin: 2rem;
+    background-color: #d0f0fd;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/*Footer*/
+
+.footer {
+  background-color: #0b1f36;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  border-top: 4px solid #ffffff;
+}
+
+/*Responsive*/
+
+@media (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .page_container {
+    margin: 1rem;
+  }
+
+  .page_grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image_info {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .first_container,
+  .second_container,
+  .third_container {
+    grid-column: auto;
+    grid-row: auto;
+    margin: 1rem 0;
+    text-align: center;
+  }
+}

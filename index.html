@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/mainstyle.css" />
+  <title>Crud</title>
+</head>
+<body>
+  <div class="pagina">
+
+    <!-- HEADER -->
+    <header class="header_style">
+      <h1 class="header_title">CRUDZADSO</h1>
+      <nav>
+        <button id= "register" class="header_button">Sign Up</button>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="page_container">
+      <img class="page_image" src="./img/locker.gif" alt="Imagen de ejemplo" />
+
+      <form id="form" class="form_container">
+        <h3 class="form_title">Sign In to Crud</h1>
+        <div class="form_style">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Email" />
+
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Password" />
+            <p id="userinfo"></p>
+            <button id="login" type="submit" class="form_button">Login</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer_style">
+      <h3>Riwi Crudzadso - Project</h3>
+    </footer>
+  </div>
+
+  <script src="./script/script.js"></script>
+</body>
+</html>
