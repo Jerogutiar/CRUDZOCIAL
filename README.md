@@ -1,123 +1,57 @@
-<div align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript Logo" width="120"/>
-  <h1>📱 Crudzocial en JavaScript</h1>
-  <p>Escenario para poner a prueba tu destreza con el lenguaje de programación.</p>
+# 📝 Aplicación de Notas
 
-  <p>
-    <img src="https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript&logoColor=white" alt="JavaScript Badge"/>
-    <img src="https://img.shields.io/badge/Estado-%20Finalizado-green" alt="Estado Badge"/>
-  </p>
-</div>
-
-# 📸 Crudzocial
-
-**Crudzocial** es una aplicación web CRUD educativa desarrollada con HTML, CSS, y JavaScript puro, que permite a los usuarios registrarse, iniciar sesión y gestionar imágenes, notas personales y su perfil. Los administradores tienen acceso a funcionalidades adicionales de gestión de usuarios, logs, imágenes y notas.
+Una aplicación web simple para tomar, editar y eliminar notas personales. Las notas se guardan en el navegador mediante `localStorage`, y el acceso se gestiona a través de `sessionStorage`.
 
 ---
 
-## 📁 Estructura del Proyecto
+## 🚀 ¿Cómo funciona?
 
-> ⚠️ Nota: Aunque existen archivos `.html` separados, **la aplicación es de página única (SPA)**. Toda la lógica y navegación se maneja en `index.html` y `main.js`.
-
----
-
-## 📝 Estructura del Proyecto
-
-```
-CRUDZOCIAL/
-│
-/assets
-└── css/styles.css        → Estilos personalizados
-└── js/main.js            → Lógica de toda la aplicación
-/html
-├── index.html            → Página principal
-├── login.html            
-├── register.html         
-├── profile.html
-├── notes.html
-├── images.html
-└── users.html
-```
-
+- Al escribir una nota y hacer clic en "Guardar Nota", se almacena en el `localStorage`.
+- Cada nota muestra quién la escribió y la fecha.
+- Las notas pueden editarse o eliminarse, pero **solo por el autor** o por un usuario con rol `admin`.
+- Las ediciones se hacen de forma **inline** y pueden cancelarse.
 
 ---
 
-## 🚀 Funcionalidades Principales
+## 🛠️ Tecnologías utilizadas
 
-### 👤 Autenticación de Usuarios
-- Registro de nuevos usuarios (formulario completo con validaciones).
-- Inicio y cierre de sesión.
-- Persistencia de sesión usando `sessionStorage`.
-
-### 🖼️ Galería de Imágenes
-- Agregar imágenes mediante URL.
-- Visualización y eliminación de imágenes.
-- Imágenes protegidas por permisos (solo admins pueden ver todo).
-
-### 📝 Notas Personales
-- Crear, editar y eliminar notas.
-- Visualización organizada en tarjetas.
-- Cada nota contiene fecha de creación y modificación.
-
-### 👨‍💼 Perfil del Usuario
-- Visualización y edición de datos personales.
-- Logs de actividades personales (hasta 10 recientes).
-
-### 🛠️ Panel de Administración (Solo para `admin`)
-- Visualización de todos los usuarios.
-- Logs globales del sistema.
-- Visualización de todas las imágenes y notas.
-- Acceso exclusivo a la sección `#users`.
+- **HTML5** — Estructura semántica.
+- **CSS** — Estilos modernos con gradientes y diseño responsivo básico.
+- **JavaScript** — Lógica completa
+- **localStorage** y **sessionStorage** — Almacenamiento del navegador
 
 ---
 
-## 🧠 Tecnología Utilizada
+## 📂 Estructura del proyecto
 
-- **HTML5 & CSS3**
-- **Bootstrap 5.3** + **Bootstrap Icons**
-- **JavaScript Vanilla (Puro)**
-- **LocalStorage** y **SessionStorage**
+📁 proyecto-notas/
 
----
+├── index.html
 
-## 🔒 Control de Acceso
+├── notas.css
 
-- Roles: `admin` y `user`.
-- Un usuario administrador se crea automáticamente si no existe:
-  - Email: `admin@crudzocial.com`
-  - Contraseña: `admin123`
-- Admin puede ver y borrar contenido de todos.
-- Usuarios solo ven su contenido.
+└── notas.js
 
----
 
-## 🛑 Validaciones y Seguridad
+# 👨‍💻 Autor
+- `yeferson Garcia`
 
-- Validación básica de formularios.
-- Evita registros duplicados por email.
-- Confirmación antes de eliminar imágenes o notas.
-- Protección de rutas (solo usuarios logueados acceden a secciones privadas).
 
----
+## 💡 Posibles mejoras
 
-## 📌 Cómo iniciar el proyecto
+- Guardado en base de datos real.
 
-1. Clona o descarga el repositorio.
-2. Abre `index.html` en tu navegador.
-3. ¡Listo! No necesitas servidor, todo funciona localmente.
+- Responsive total para móviles.
 
----
 
-## ✅ Estado del Proyecto
-✔️ Completado y funcional 100%.  
-⚠️ No incluye backend ni base de datos real, todo se guarda en el navegador.
+## 🖼️ Vista previa
 
----
 
-## 🧑‍💻 Autor
+![Image](https://github.com/user-attachments/assets/3efcb5f7-6881-4eed-8b8f-5ae6f4f0eea1)
 
-Desarrollado por Celula **Moodle** para **Riwi**.  
-Proyecto académico tipo **CRUD** para fines educativos.
+![Image](https://github.com/user-attachments/assets/d8be3eaa-544f-43e4-9e76-f7e482f90a00)
 
----
+![Image](https://github.com/user-attachments/assets/99b5572c-f25f-49ef-9c5a-670b0461814d)
+
+
 
