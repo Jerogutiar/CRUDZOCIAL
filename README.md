@@ -114,7 +114,7 @@ CRUDZOCIAL/
 
 ---
 
-## 🧑‍💻 Autor
+## 🧑‍🧒‍🧒 Autor
 
 Desarrollado por Celula **Moodle** para **Riwi**.  
 Proyecto académico tipo **CRUD** para fines educativos.
