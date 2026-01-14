@@ -1,0 +1,23 @@
+:root {
+    --bs-body-font-family: "Open Sans", sans-serif;
+  }
+body{
+    font-family: var(--bs-body-font-family);
+}
+/*Icon plus Styles */
+.icon-plus{
+    font-size: 7rem;
+}
+.form{
+    height: 5rem;
+}
+/*display options linked to click button to show/hide text field thar receives url*/
+.hidden{
+    display: none;
+}
+.visible{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*new card styles*/
